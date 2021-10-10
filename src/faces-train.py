@@ -48,4 +48,5 @@ with open("pickles/face-labels.pickle", 'wb') as f:
 	pickle.dump(label_ids, f)
 
 recognizer.train(x_train, np.array(y_labels))
+os.makedirs(os.path.dirname("recognizers/face-trainner.yml"), exist_ok=True)
 recognizer.save("recognizers/face-trainner.yml")
